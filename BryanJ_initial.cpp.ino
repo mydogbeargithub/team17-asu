@@ -91,12 +91,10 @@ void loop() {
   speed_fps = distance_traveled_ft / (time_traveled_in_ms / 1000);
 
 //Display in serial monitor what the distance and speed
-  //Serial.print("Distance: ");
- // Serial.println(distance_ft);
- // Serial.print("Speed: ");
- // Serial.println(speed_of_trailing_car);
-
-  Serial.println("Distance:", distance_ft, "Speed:", speed_of_trailing_car)
+  Serial.print("Distance: ");
+  Serial.println(distance_ft);
+  Serial.print("Speed: ");
+  Serial.println(speed_of_trailing_car);
   
 ////////////////////////////////////////////////////////////////////////
 ///////////////////////////Decision Diamonds////////////////////////////
