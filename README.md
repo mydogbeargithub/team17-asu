@@ -1,2 +1,5 @@
 # team17-asu
-for ASU's team 17, our brake light repository
+For ASU's Team 17, our brake light repository
+
+# Notes
+For demo purposes
