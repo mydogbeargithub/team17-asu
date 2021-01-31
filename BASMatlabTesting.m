@@ -53,7 +53,7 @@ writeDigitalPin(a, 'D9', ON);
 writeDigitalPin(a, 'D10', OFF);
 writeDigitalPin(a, 'D11', OFF);
 % 1/3 LED's on for CAUTION branch. In the final build, 4/8 LED's would turn
-% ON, along with the VAUTION message LED.
+% ON, along with the CAUTION message LED.
 
     else
 writeDigitalPin(a,'D9', OFF);
