@@ -46,7 +46,8 @@ float distance_inches,
       speed_fps,    
       distance_ft;
 
-
+int trigPin = 11;    // Trigger
+int echoPin = 12;    // Echo
 int testbenchVAR=1; // 3 states 0=off, 1=Caution, 2=STOP
 
 void setup() {
@@ -62,18 +63,20 @@ void loop() {
   
 //Reset Trigger
   digitalWrite(TRIGGER_PIN, LOW);
-  delayMicroseconds(2);
+  delayMicroseconds(5);
   digitalWrite(TRIGGER_PIN, HIGH);
-  delayMicroseconds(DELAY_MS);  //10us is required trigger input
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN, LOW);
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////First compute the distance//////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
+  pinMode(SONAR_ECHO_PIN, INPUT);
 
 //Compute Distance
   sonar_echo_duration= pulseIn(SONAR_ECHO_PIN, HIGH); //in ms, 2way
-  distance_inches=sonar_echo_duration*SPEED_OF_SOUND_IPUS/2;
+  distance_inches=sonar_echo_duration/200;
   distance_ft = distance_inches/12;
   if (distance_ft > 14) return;
 
